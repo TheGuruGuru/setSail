@@ -1,0 +1,28 @@
+{
+	"itemGroup.setsail": "Beispiel Create-Erweiterung",
+	"itemGroup.setsail.main_tab": "Hauptreiter",
+
+	"block.setsail.setsail_kinetic_block": "Beispiel-Kinetikblock",
+	"block.setsail.setsail_generator_block": "Beispiel-Generatorblock",
+
+	"item.setsail.setsail_item": "Beispielgegenstand",
+	"item.setsail.setsail_result": "Beispielergebnis",
+	"item.setsail.incomplete_example": "Unvollständiges Beispiel",
+
+	"gui.setsail.setsail_generator.generating": "Erzeugt Rotation",
+	"gui.setsail.setsail_kinetic.consuming": "Verbraucht Belastung",
+	"gui.setsail.rpm": "%s UPM",
+	"gui.setsail.su": "%s SU",
+
+	"display_source.setsail.setsail_source": "Kinetische Geschwindigkeit",
+
+	"item.setsail.setsail_item.tooltip.summary": "Ein Vorführgegenstand für die _Beispiel-Erweiterung_.",
+	"item.setsail.setsail_item.tooltip.condition1": "Wenn gehalten",
+	"item.setsail.setsail_item.tooltip.behaviour1": "Zeigt diese Beschreibung – ermöglicht durch Creates _ItemDescription_-Tooltip-System.",
+
+	"setsail.ponder.setsail_ponder.header": "Willkommen bei der Beispiel-Erweiterung",
+	"setsail.ponder.setsail_ponder.text_1": "Jeder Block hier wird aus setsail_ponder.nbt geladen",
+	"setsail.ponder.setsail_ponder.text_2": "Blockentitäten wie dieses Schild werden dargestellt und ticken wie in der Welt",
+	"setsail.ponder.setsail_ponder.text_3": "Zwei mechanische Arme flankieren das Schild und beweisen, dass auch Creates eigene Blöcke funktionieren",
+	"setsail.ponder.setsail_ponder.text_4": "Du kannst auch den blöcken rpm werte geben"
+}

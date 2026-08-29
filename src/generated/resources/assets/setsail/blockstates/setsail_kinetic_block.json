@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "setsail:block/setsail_kinetic_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "setsail:block/setsail_kinetic_block"
+    },
+    "axis=z": {
+      "model": "setsail:block/setsail_kinetic_block",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    }
+  ],
+  "results": [
+    {
+      "id": "setsail:setsail_item"
+    }
+  ]
+}

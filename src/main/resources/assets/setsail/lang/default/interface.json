@@ -1,0 +1,10 @@
+{
+	"itemGroup.setsail": "Create: Set Sail",
+
+	"gui.setsail.setsail_generator.generating": "Generating rotation",
+	"gui.setsail.setsail_kinetic.consuming": "Drawing stress",
+	"gui.setsail.rpm": "%s RPM",
+	"gui.setsail.su": "%s SU",
+
+	"display_source.setsail.setsail_source": "Kinetic Speed"
+}

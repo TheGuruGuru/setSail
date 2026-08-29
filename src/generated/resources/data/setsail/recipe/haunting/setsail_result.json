@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "setsail:setsail_item"
+    }
+  ],
+  "results": [
+    {
+      "id": "setsail:setsail_result"
+    }
+  ]
+}
