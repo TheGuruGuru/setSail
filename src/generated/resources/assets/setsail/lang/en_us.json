@@ -1,4 +1,5 @@
 {
+  "block.setsail.rope_relay": "Rope Relay",
   "block.setsail.setsail_generator_block": "Setsail Generator Block",
   "block.setsail.setsail_kinetic_block": "Setsail Kinetic Block",
   "display_source.setsail.setsail_source": "Kinetic Speed",

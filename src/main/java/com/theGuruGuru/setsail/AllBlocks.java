@@ -1,22 +1,68 @@
 package com.theGuruGuru.setsail;
 
+import com.simibubi.create.AllTags;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.data.SharedProperties;
+import com.simibubi.create.foundation.data.recipe.CommonMetal;
+import com.theGuruGuru.setsail.config.server.blocks.SetSailStress;
+import com.theGuruGuru.setsail.content.blocks.ropeRelay.RopeRelayBlock;
 import com.theGuruGuru.setsail.content.kinetics.CreateSetSailGeneratorBlock;
 import com.theGuruGuru.setsail.content.kinetics.CreateSetSailKineticBlock;
 import com.simibubi.create.api.behaviour.display.DisplaySource;
 import com.simibubi.create.api.stress.BlockStressValues;
 import com.simibubi.create.foundation.data.BlockStateGen;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
+import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
+import dev.simulated_team.simulated.config.server.blocks.SimStress;
+import dev.simulated_team.simulated.content.blocks.rope.rope_winch.RopeWinchBlock;
+import dev.simulated_team.simulated.data.SimBlockStateGen;
+import dev.simulated_team.simulated.index.SimItems;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
+
+import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 
 /**
  * Block registration.
  */
+
+
+@SuppressWarnings("removal")
 public class AllBlocks {
+
+    private static final CreateRegistrate REGISTRATE = CreateSetSail.REGISTRATE;
+
+    public static final BlockEntry<RopeRelayBlock> ROPE_RELAY =
+            REGISTRATE.block("rope_relay", RopeRelayBlock::new)
+                    .tag(AllTags.AllBlockTags.NON_MOVABLE.tag)
+                    .initialProperties(SharedProperties::stone)
+                    .addLayer(() -> RenderType::cutoutMipped)
+                    .blockstate(SimBlockStateGen::directionalKineticAxisBlockstate)
+                    .properties(Block.Properties::noOcclusion)
+                    .transform(SetSailStress.setImpact(4.0))
+                    .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                    .tag(BlockTags.MINEABLE_WITH_AXE)
+                    .recipe((c, p) -> ShapedRecipeBuilder.shaped(RecipeCategory.MISC, c.get(), 1)
+                            .pattern("I")
+                            .pattern("H")
+                            .pattern("S")
+                            .define('I', CommonMetal.IRON.plates)
+                            .define('H', com.simibubi.create.AllBlocks.SHAFT)
+                            .define('S', com.simibubi.create.AllBlocks.INDUSTRIAL_IRON_BLOCK)
+                            .unlockedBy("has_ingredient", RegistrateRecipeProvider.has(SimItems.ROPE_COUPLING))
+                            .save(p))
+                    .item()
+                    .transform(customItemModel())
+                    .register();
 
     /**
      * A kinetic block that draws stress from the network. Its blockstate is generated as

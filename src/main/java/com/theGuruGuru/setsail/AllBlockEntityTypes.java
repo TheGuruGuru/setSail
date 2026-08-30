@@ -1,15 +1,29 @@
 package com.theGuruGuru.setsail;
 
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.theGuruGuru.setsail.content.blocks.ropeRelay.RopeRelayBlockEntity;
+import com.theGuruGuru.setsail.content.blocks.ropeRelay.RopeRelayRenderer;
 import com.theGuruGuru.setsail.content.kinetics.CreateSetSailGeneratorBlockEntity;
 import com.theGuruGuru.setsail.content.kinetics.CreateSetSailKineticBlockEntity;
 import com.theGuruGuru.setsail.content.kinetics.CreateSetSailShaftRenderer;
 import com.simibubi.create.content.kinetics.base.ShaftVisual;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
+import dev.simulated_team.simulated.content.blocks.rope.rope_winch.RopeWinchBlockEntity;
+import dev.simulated_team.simulated.content.blocks.rope.rope_winch.RopeWinchRenderer;
+import dev.simulated_team.simulated.index.SimBlocks;
 
 /**
  * Block entity type registration.
  */
 public class AllBlockEntityTypes {
+
+    public static final CreateRegistrate REGISTRATE = CreateSetSail.REGISTRATE;
+
+    public static final BlockEntityEntry<RopeRelayBlockEntity> ROPE_RELAY = REGISTRATE
+            .blockEntity("rope_relay", RopeRelayBlockEntity::new)
+            .validBlocks(AllBlocks.ROPE_RELAY)
+            .renderer(() -> RopeRelayRenderer::new)
+            .register();
 
     /**
      * Block entity for EXAMPLE_KINETIC_BLOCK, rendered with CreateSetSailShaftRenderer so a

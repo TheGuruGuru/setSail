@@ -17,6 +17,26 @@ repositories {
     maven { url = "https://maven.createmod.net" }
     maven { url = "https://mvn.devos.one/snapshots" }
     maven { url = "https://maven.blamejared.com/" }
+
+
+    maven {
+        name = "mainReleases"
+        url = uri("https://maven.ryanhcode.dev/releases")
+    }
+
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
+
+    maven {
+        url "https://maven.squiddev.cc"
+        content { includeGroup("cc.tweaked") }
+    }
 }
 
 base {
@@ -79,6 +99,11 @@ dependencies {
     runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
 
+
+    implementation("dev.ryanhcode.sable:sable-neoforge-${project.minecraft_version}:${project.sable_version}")
+    implementation("dev.eriksonn.aeronautics:aeronautics-neoforge-${project.minecraft_version}:${aeronautics_version}")
+    implementation("dev.ryanhcode.offroad:offroad-neoforge-${project.minecraft_version}:${aeronautics_version}")
+    implementation("dev.simulated_team.simulated:simulated-neoforge-${project.minecraft_version}:${aeronautics_version}")
     // JEI (optional — for recipe integration)
     compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
